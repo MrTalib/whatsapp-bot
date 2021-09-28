@@ -598,7 +598,7 @@ module.exports = handle = (client, Client) => {
             client.relayWAMessage(po, {waitForAck: true})
 			}
         })
-		Client.cmd.on('antilink', (data) => {
+		Client.cmd.on('антыссылка', (data) => {
             if(!data.isGroup) return data.reply(mess.admin)
             if(!data.isAdmin) return data.reply(mess.admin)
             if(!data.botIsAdmin) return data.reply(mess.botAdmin)
@@ -1488,7 +1488,7 @@ module.exports = handle = (client, Client) => {
                         }
                     })
                     break
-                case 'linkgroup':
+                case 'ссылкагруппы':
                     if(!data.isGroup) return data.reply(mess.group)
                     if(!data.botIsAdmin) return data.reply(mess.botAdmin)
                     linkgc = await client.groupInviteCode(data.from)
