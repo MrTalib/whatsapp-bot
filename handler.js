@@ -416,7 +416,7 @@ module.exports = handle = (client, Client) => {
             afkJs.addAfk(data.from, data.sender, data.body, timesNow)
             Client.sendText(data.from, "```" + `${data.pushname} [@${data.sender.split('@')[0]}] sedang AFK\n\nAlasan: ${data.body}\nTime: ${timesNow}` + "```")
         })
-	     Client.cmd.on('welcome', (data) => {
+	     Client.cmd.on('приветствие', (data) => {
             if(!data.isGroup) return data.reply(mess.admin)
             if(!data.isAdmin) return data.reply(mess.admin)
             const dataGc = JSON.parse(fs.readFileSync('./lib/json/dataGc.json'))
@@ -643,14 +643,14 @@ module.exports = handle = (client, Client) => {
             client.revokeInvite(data.from)
             data.reply(`Linkgroup berhasil di reset oleh admin @${data.sender.split('@')[0]}`)
         })
-        Client.cmd.on('group', (data) => {
+        Client.cmd.on('групу', (data) => {
             if(!data.isGroup) return data.reply(mess.group)
             if(!data.isAdmin) return data.reply(mess.admin)
             if(!data.botIsAdmin) return data.reply(mess.botAdmin)
-            if(data.args[0] && data.args[0].toLowerCase() == 'open') {
+            if(data.args[0] && data.args[0].toLowerCase() == 'открой') {
                 client.groupSettingChange(data.from, GroupSettingChange.messageSend, false)
                 data.reply(`Group telah dibuka oleh admin @${data.sender.split('@')[0]}`)
-            } else if(data.args[0] && data.args[0].toLowerCase() == 'close') {
+            } else if(data.args[0] && data.args[0].toLowerCase() == 'закрой') {
                 client.groupSettingChange(data.from, GroupSettingChange.messageSend, true)
                 data.reply(`Group telah ditutup oleh admin @${data.sender.split('@')[0]}`)
             } else {
