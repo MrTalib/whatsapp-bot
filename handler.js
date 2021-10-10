@@ -910,7 +910,7 @@ module.exports = handle = (client, Client) => {
 				break
                 case 'command':
                 case 'cmd':
-                case 'menu':
+                case 'меню':
                 case 'help':
                 case 'list':
  	                 const mediaMsg = await client.prepareMessageMedia(await getBuffer(configs.imgUrl), 'imageMessage')
@@ -948,12 +948,12 @@ module.exports = handle = (client, Client) => {
                     /*STICKER*/
                 case 'sgif':
                 case 'sticker':
-                case 's':
+                case 'стикер':
                 case 'stiker':
                 case 'stickergif':
                 case 'stikergif':
                     if(isLimit(data.sender)) return data.reply(mess.limit)
-                    if(type != 'videoMessage' && !isQuotedVideo && !isQuotedImage && type != 'imageMessage') return data.reply('Wrong format!')
+                    if(type != 'videoMessage' && !isQuotedVideo && !isQuotedImage && type != 'imageMessage') return data.reply('Неверный формат!')
                     const getbuff = data.isQuotedVideo || data.isQuotedImage ? JSON.parse(JSON.stringify(data.message).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : data.message
                     const dlfile = await client.downloadMediaMessage(getbuff)
                     if(type == 'videoMessage' || isQuotedVideo) Client.sendMp4AsSticker(from, dlfile.toString('base64'), message, { pack: `${configs.pack}`, author: `${configs.author}` })
