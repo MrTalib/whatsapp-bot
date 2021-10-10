@@ -657,19 +657,19 @@ module.exports = handle = (client, Client) => {
 				let po = client.prepareMessageFromContent(data.from, {
 					"listMessage":{
                   "title": "*WHATSAPP-BOT*",
-                  "description": "pilh open/close",
+                  "description": "pilh открыть/закрыть",
                   "buttonText": "COMMANDS",
                   "listType": "SINGLE_SELECT",
                   "sections": [
                      {
                         "rows": [
                            {
-                              "title": "open",
-                              "rowId": `${data.prefix}${data.command} open`
+                              "title": "открыть",
+                              "rowId": `${data.prefix}${data.command} открыть`
                            },
 						   {
-                              "title": "close",
-                              "rowId": `${data.prefix}${data.command} close`
+                              "title": "закрыть",
+                              "rowId": `${data.prefix}${data.command} закрыть`
                            }
                         ]
                      }]}}, {}) 
